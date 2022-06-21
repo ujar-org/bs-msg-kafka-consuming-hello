@@ -1,0 +1,34 @@
+spring :
+  application :
+    name : basics-kafka-consuming-hello
+
+  kafka :
+    producer :
+      bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
+      properties :
+        security.protocol : PLAINTEXT
+    consumer :
+      bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
+      group-id : consuming-hello
+      auto-offset-reset : earliest
+      properties :
+        isolation.level : read_committed
+    admin :
+      properties :
+        bootstrap.servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
+        security.protocol : PLAINTEXT
+
+  devtools :
+    add-properties : false
+    restart :
+      enabled : false
+    livereload :
+      enabled : false
+
+ujar :
+  kafka :
+    topics :
+      hello-world :
+        name : test.hello.world
+        partitions : 1
+        retention : 30s

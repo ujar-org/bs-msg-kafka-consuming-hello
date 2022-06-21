@@ -1,0 +1,10 @@
+spring:
+  devtools :
+    add-properties : true
+    restart :
+      enabled : true
+    livereload :
+      enabled : true
+management :
+  endpoints :
+    enabled-by-default : true
