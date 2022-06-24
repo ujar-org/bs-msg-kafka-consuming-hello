@@ -1,20 +1,35 @@
 package org.ujar.basics.kafka.consuming.hello.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
+import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.annotation.KafkaListenerConfigurer;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.config.KafkaListenerEndpointRegistrar;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
+import org.springframework.kafka.listener.DefaultErrorHandler;
+import org.springframework.kafka.support.ExponentialBackOffWithMaxRetries;
 import org.springframework.kafka.support.serializer.ErrorHandlingDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerde;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.ujar.basics.kafka.consuming.hello.consumer.dto.GreetingDto;
+import org.ujar.boot.starter.kafka.config.KafkaErrorHandlingProperties;
+import org.ujar.boot.starter.kafka.config.errorhandling.Backoff;
+import org.ujar.boot.starter.kafka.exception.ConsumerRecordProcessingException;
 
 @Configuration
-class KafkaConfig {
+@RequiredArgsConstructor
+class KafkaConfig implements KafkaListenerConfigurer {
+
+  private final LocalValidatorFactoryBean validator;
 
   @Bean
   ConsumerFactory<String, GreetingDto> consumeGreetingConsumerFactory(KafkaProperties kafkaProperties) {
@@ -29,11 +44,43 @@ class KafkaConfig {
   @Bean
   ConcurrentKafkaListenerContainerFactory<String, GreetingDto> consumeGreetingKafkaListenerContainerFactory(
       ConsumerFactory<String, GreetingDto> consumeGreetingConsumerFactory,
-      @Value("${ujar.kafka.consumer.threads:2}") int threads) {
+      @Value("${ujar.kafka.consumer.threads:2}") int threads,
+      DefaultErrorHandler errorHandler) {
     ConcurrentKafkaListenerContainerFactory<String, GreetingDto> factory =
         new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumeGreetingConsumerFactory);
     factory.setConcurrency(threads);
+
+    factory.setCommonErrorHandler(errorHandler);
     return factory;
+  }
+
+  @Bean
+  DefaultErrorHandler kafkaDefaultErrorHandler(
+      KafkaOperations<Object, Object> operations,
+      KafkaErrorHandlingProperties properties) {
+    // Publish to dead letter topic any messages dropped after retries with back off
+    var recoverer = new DeadLetterPublishingRecoverer(operations,
+        // Always send to first/only partition of DLT suffixed topic
+        (cr, e) -> new TopicPartition(cr.topic() + properties.deadLetter().suffix(), 0));
+
+    // Spread out attempts over time, taking a little longer between each attempt
+    // Set a max for retries below max.poll.interval.ms; default: 5m, as otherwise we trigger a consumer rebalance
+    Backoff backoff = properties.backoff();
+    var exponentialBackOff = new ExponentialBackOffWithMaxRetries(backoff.maxRetries());
+    exponentialBackOff.setInitialInterval(backoff.initialInterval().toMillis());
+    exponentialBackOff.setMultiplier(backoff.multiplier());
+    exponentialBackOff.setMaxInterval(backoff.maxInterval().toMillis());
+
+    // Do not try to recover from validation exceptions when validation of orders failed
+    var errorHandler = new DefaultErrorHandler(recoverer, exponentialBackOff);
+    errorHandler.addNotRetryableExceptions(javax.validation.ValidationException.class);
+    errorHandler.addNotRetryableExceptions(ConsumerRecordProcessingException.class);
+    return errorHandler;
+  }
+
+  @Override
+  public void configureKafkaListeners(KafkaListenerEndpointRegistrar registrar) {
+    registrar.setValidator(this.validator);
   }
 }

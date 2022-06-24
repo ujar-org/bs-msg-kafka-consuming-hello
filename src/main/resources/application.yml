@@ -64,10 +64,25 @@ server :
   port : ${SERVER_PORT:8080}
   shutdown : graceful
 
+embedded :
+  kafka :
+    enabled : false
+    docker-image-version : 6.2.4
+
 ujar :
   kafka :
+    create-topics-on-startup : ${KAFKA_CREATE_TOPICS_ON_STARTUP:true}
     topics :
       hello-world :
         name : ${KAFKA_TOPIC_HELLO_WORLD:hello.world}
         partitions : ${KAFKA_TOPIC_PARTITIONS_HELLO_WORLD:2}
         retention : ${KAFKA_TOPIC_RETENTION_HELLO_WORLD:30m}
+    error-handling :
+      dead-letter :
+        retention : 1d
+        suffix : .DLT
+      backoff :
+        initial-interval : 500ms
+        max-interval : 2s
+        max-retries : 4
+        multiplier : 1.5

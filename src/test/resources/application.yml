@@ -25,10 +25,26 @@ spring :
     livereload :
       enabled : false
 
+embedded :
+  kafka :
+    enabled : true
+    docker-image-version : 6.2.4
+
+
 ujar :
   kafka :
+    create-topics-on-startup : true
     topics :
       hello-world :
         name : test.hello.world
         partitions : 1
         retention : 30s
+    error-handling :
+      dead-letter :
+        retention : 30s
+        suffix : .DLT
+      backoff :
+        initial-interval : 500ms
+        max-interval : 2s
+        max-retries : 4
+        multiplier : 1.5
