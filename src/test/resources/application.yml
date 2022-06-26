@@ -6,12 +6,14 @@ spring :
     producer :
       bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
       properties :
+        schema.registry.url: ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
         security.protocol : PLAINTEXT
     consumer :
       bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
       group-id : consuming-hello
       auto-offset-reset : earliest
       properties :
+        schema.registry.url: ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
         isolation.level : read_committed
     admin :
       properties :
