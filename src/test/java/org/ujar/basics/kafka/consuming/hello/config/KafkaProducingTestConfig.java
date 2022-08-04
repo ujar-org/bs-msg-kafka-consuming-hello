@@ -14,7 +14,7 @@ import org.ujar.boot.starter.kafka.config.BaseKafkaProducingConfig;
 
 @Configuration
 @RequiredArgsConstructor
-public class KafkaProducingTestConfig extends BaseKafkaProducingConfig {
+class KafkaProducingTestConfig extends BaseKafkaProducingConfig {
   @Bean
   ProducerFactory<String, GreetingDto> greetingMessageProducerFactory(KafkaProperties kafkaProperties) {
     return producerFactory(GreetingDto.class, kafkaProperties);
