@@ -13,7 +13,7 @@ import org.ujar.basics.kafka.consuming.hello.consumer.dto.GreetingDto;
 import org.ujar.boot.starter.kafka.config.BaseKafkaConsumingConfig;
 
 @Configuration
-KafkaConsumingConfig extends BaseKafkaConsumingConfig {
+class KafkaConsumingConfig extends BaseKafkaConsumingConfig {
 
   @Autowired
   KafkaConsumingConfig(LocalValidatorFactoryBean validator) {
