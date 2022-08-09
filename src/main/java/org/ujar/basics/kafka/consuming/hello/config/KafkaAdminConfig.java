@@ -21,7 +21,7 @@ class KafkaAdminConfig {
 
   @Bean
   NewTopic helloWorldKafkaTopic() {
-    var definition = topicDefinitions.get(Constants.TOPIC_DEFINITION_HELLO_WORLD);
+    final var definition = topicDefinitions.get(Constants.TOPIC_DEFINITION_HELLO_WORLD);
     return TopicBuilder
         .name(definition.name())
         .partitions(definition.partitions())
