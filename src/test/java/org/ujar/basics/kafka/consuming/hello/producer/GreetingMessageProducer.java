@@ -23,7 +23,7 @@ public class GreetingMessageProducer {
    * Send message to Kafka broker with avoiding transaction-aware configuration environment
    */
   public void send(GreetingDto message) {
-    var key = UUID.randomUUID().toString();
+    final var key = UUID.randomUUID().toString();
     log.info("( {} ) Send message, key: {}, value: {}", Thread.currentThread().getName(), key, message);
     kafkaTemplate.executeInTransaction(t -> t.send(
         topicDefinitions.get(TOPIC_DEFINITION_HELLO_WORLD).name(),
