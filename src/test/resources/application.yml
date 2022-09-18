@@ -10,16 +10,22 @@ spring :
   kafka :
     producer :
       bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
+      value-serializer : org.springframework.kafka.support.serializer.JsonSerializer
       properties :
-        schema.registry.url: ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
+        schema.registry.url : ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
         security.protocol : PLAINTEXT
     consumer :
       bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
+      value-deserializer : org.springframework.kafka.support.serializer.JsonDeserializer
       group-id : consuming-hello
       auto-offset-reset : earliest
       properties :
-        schema.registry.url: ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
+        schema.registry.url : ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
         isolation.level : read_committed
+        spring :
+          json :
+            trusted :
+              packages : *
     admin :
       properties :
         bootstrap.servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
