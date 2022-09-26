@@ -110,13 +110,13 @@ steps :
 
 services :
   - name : zookeeper
-    image : confluentinc/cp-zookeeper:6.2.4
+    image : confluentinc/cp-zookeeper:6.2.6
     environment :
       ZOOKEEPER_CLIENT_PORT : 2181
       ZOOKEEPER_TICK_TIME : 2000
 
   - name : kafka
-    image : confluentinc/cp-kafka:6.2.4
+    image : confluentinc/cp-kafka:6.2.6
     environment :
       KAFKA_BROKER_ID : 1
       KAFKA_ZOOKEEPER_CONNECT : zookeeper:2181
@@ -130,7 +130,7 @@ services :
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR : 1
 
   - name : schema-registry
-    image : confluentinc/cp-schema-registry:5.5.10
+    image : confluentinc/cp-schema-registry:5.5.12
     environment :
       SCHEMA_REGISTRY_HOST_NAME : schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL : "zookeeper:2181"
