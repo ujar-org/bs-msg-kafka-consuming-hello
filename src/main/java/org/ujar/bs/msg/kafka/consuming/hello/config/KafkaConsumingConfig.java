@@ -1,4 +1,4 @@
-package org.ujar.basics.kafka.consuming.hello.config;
+package org.ujar.bs.msg.kafka.consuming.hello.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,7 +9,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import org.ujar.basics.kafka.consuming.hello.consumer.dto.GreetingDto;
+import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
 import org.ujar.boot.starter.kafka.config.BaseKafkaConsumingConfig;
 
 @Configuration
