@@ -1,4 +1,4 @@
-spring:
+spring :
   devtools :
     add-properties : true
     restart :
