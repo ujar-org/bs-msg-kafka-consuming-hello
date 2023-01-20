@@ -9,8 +9,8 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
 import org.ujar.boot.starter.kafka.config.BaseKafkaConsumingConfig;
+import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
 
 @Configuration
 class KafkaConsumingConfig extends BaseKafkaConsumingConfig {
