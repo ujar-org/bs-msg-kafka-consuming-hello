@@ -1,4 +1,4 @@
-package org.ujar.basics.kafka.consuming.hello.consumer;
+package org.ujar.bs.msg.kafka.consuming.hello.consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -10,8 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.ujar.basics.kafka.consuming.hello.consumer.dto.GreetingDto;
-import org.ujar.basics.kafka.consuming.hello.producer.GreetingMessageProducer;
+import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
+import org.ujar.bs.msg.kafka.consuming.hello.producer.GreetingMessageProducer;
 
 
 @SpringBootTest

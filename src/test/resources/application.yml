@@ -5,7 +5,7 @@ build :
 
 spring :
   application :
-    name : basics-kafka-consuming-hello
+    name : bs-msg-kafka-consuming-hello
 
   kafka :
     producer :

@@ -1,6 +1,6 @@
-package org.ujar.basics.kafka.consuming.hello.producer;
+package org.ujar.bs.msg.kafka.consuming.hello.producer;
 
-import static org.ujar.basics.kafka.consuming.hello.config.Constants.TOPIC_DEFINITION_HELLO_WORLD;
+import static org.ujar.bs.msg.kafka.consuming.hello.config.Constants.TOPIC_DEFINITION_HELLO_WORLD;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.UUID;
@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import org.ujar.basics.kafka.consuming.hello.consumer.dto.GreetingDto;
+import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
 import org.ujar.boot.starter.kafka.config.KafkaTopicDefinitionProperties;
 
 @Component
