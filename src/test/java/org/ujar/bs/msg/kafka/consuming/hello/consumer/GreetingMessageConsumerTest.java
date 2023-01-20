@@ -2,6 +2,7 @@ package org.ujar.bs.msg.kafka.consuming.hello.consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
