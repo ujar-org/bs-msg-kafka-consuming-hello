@@ -1,4 +1,4 @@
-package org.ujar.basics.kafka.consuming.hello.config;
+package org.ujar.bs.msg.kafka.consuming.hello.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;

@@ -17,7 +17,7 @@ info :
 
 spring :
   application :
-    name : basics-kafka-consuming-hello
+    name : bs-msg-kafka-consuming-hello
   jackson :
     default-property-inclusion : NON_NULL
   lifecycle :

@@ -1,4 +1,4 @@
-package org.ujar.basics.kafka.consuming.hello;
+package org.ujar.bs.msg.kafka.consuming.hello;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
