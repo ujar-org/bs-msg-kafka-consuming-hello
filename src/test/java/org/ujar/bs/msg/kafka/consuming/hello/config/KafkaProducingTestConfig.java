@@ -9,8 +9,8 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaOperations;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
 import org.ujar.boot.starter.kafka.config.BaseKafkaProducingConfig;
+import org.ujar.bs.msg.kafka.consuming.hello.consumer.dto.GreetingDto;
 
 @Configuration
 @RequiredArgsConstructor
