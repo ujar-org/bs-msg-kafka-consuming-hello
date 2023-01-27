@@ -1,8 +1,5 @@
 # Hello, World! - Kafka consumer app
 
-[![Build Status](http://iaolg9igjr3tghootxslfe.webrelay.io/api/badges/ujar-org/bs-msg-kafka-consuming-hello/status.svg)](http://iaolg9igjr3tghootxslfe.webrelay.io/ujar-org/bs-msg-kafka-consuming-hello)
-[![Quality Gate Status](https://sonarqube.c2a2.com/api/project_badges/measure?project=ujar-org%3Abs-msg-kafka-consuming-hello&metric=alert_status&token=c73469fcf259c78d39051a89c5094fcdbd5fda04)](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abs-msg-kafka-consuming-hello)
-
 Minimal Spring Boot based sample of Kafka consumer app.
 
 ### Pre-Requisites to run this example locally
