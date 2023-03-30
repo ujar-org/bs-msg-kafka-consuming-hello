@@ -1,18 +1,12 @@
-build :
-  description : '@project.description@'
-  relative-path : ''
-  version : '@project.version@'
-
 spring :
   application :
-    name : bs-msg-kafka-consuming-hello
+    name : quickstart-kafka-consuming-hello
 
   kafka :
     producer :
       bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
       value-serializer : org.springframework.kafka.support.serializer.JsonSerializer
       properties :
-        schema.registry.url : ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
         security.protocol : PLAINTEXT
     consumer :
       bootstrap-servers : ${KAFKA_BOOTSTRAP_SERVERS:${embedded.kafka.brokerList}}
@@ -20,7 +14,6 @@ spring :
       group-id : consuming-hello
       auto-offset-reset : earliest
       properties :
-        schema.registry.url : ${KAFKA_SCHEMA_REGISTRY_URL:http://localhost:8081}
         isolation.level : read_committed
         spring.json.trusted.packages : '*'
     admin :
@@ -38,12 +31,17 @@ spring :
 embedded :
   kafka :
     enabled : true
-    docker-image-version : 6.2.4
+    docker-image-version : 7.2.1
 
 
 ujar :
+  build :
+    description : '@project.description@'
+    relative-path : ''
+    version : '@project.version@'
   kafka :
-    create-topics-on-startup : true
+    admin :
+      create-topics : true
     topics :
       hello-world :
         name : test.hello.world
