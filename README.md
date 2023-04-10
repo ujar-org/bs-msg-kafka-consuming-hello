@@ -1,6 +1,6 @@
 # Hello, World! - Kafka consumer app
 
-Minimal Spring Boot based sample of Kafka consumer app.
+Minimal Spring Boot based sample Kafka consumer app.
 
 ### Pre-Requisites to run this example locally
 
