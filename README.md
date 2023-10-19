@@ -8,7 +8,7 @@ Minimal Spring Boot based sample Kafka consumer app.
 - Clone source code to the local machine:
 
 ```
-git clone https://github.com/ujar-org/quickstart-kafka-consuming-hello.git
+git clone https://github.com/uJarOrg/quickstart-kafka-consuming-hello.git
 
 cd quickstart-kafka-consuming-hello
 ```
