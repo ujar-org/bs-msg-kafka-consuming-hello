@@ -1,18 +1,18 @@
-package org.ujar.kafkaconsuminghello.config;
+package dev.knowhowto.kafkaconsuminghello.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.common.config.TopicConfig;
+import org.iqkv.boot.kafka.config.KafkaErrorHandlingProperties;
+import org.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
-import org.ujar.boot.kafka.config.KafkaErrorHandlingProperties;
-import org.ujar.boot.kafka.config.KafkaTopicDefinitionProperties;
 
 @Configuration
 @RequiredArgsConstructor
-@ConditionalOnProperty(value = "ujar.kafka.admin.create-topics", havingValue = "true")
+@ConditionalOnProperty(value = "iqkv.kafka.admin.create-topics", havingValue = "true")
 class KafkaAdminConfig {
   private final KafkaTopicDefinitionProperties topicDefinitions;
 

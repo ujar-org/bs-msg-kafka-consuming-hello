@@ -1,24 +1,25 @@
-package org.ujar.kafkaconsuminghello.config;
+package dev.knowhowto.kafkaconsuminghello.config;
 
 import java.util.HashMap;
 
+import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
+import org.iqkv.boot.kafka.config.BaseKafkaProducingConfig;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import org.springframework.boot.ssl.SslBundles;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaOperations;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import org.ujar.boot.kafka.config.BaseKafkaProducingConfig;
-import org.ujar.kafkaconsuminghello.consumer.dto.GreetingDto;
 
 @Configuration
 @RequiredArgsConstructor
 class KafkaProducingTestConfig extends BaseKafkaProducingConfig {
   @Bean
-  ProducerFactory<String, GreetingDto> greetingMessageProducerFactory(KafkaProperties kafkaProperties) {
-    return producerFactory(GreetingDto.class, kafkaProperties);
+  ProducerFactory<String, GreetingDto> greetingMessageProducerFactory(KafkaProperties kafkaProperties, SslBundles sslBundles) {
+    return producerFactory(GreetingDto.class, kafkaProperties, sslBundles);
   }
 
   @Bean

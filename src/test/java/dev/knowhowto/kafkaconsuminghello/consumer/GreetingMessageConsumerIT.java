@@ -1,4 +1,4 @@
-package org.ujar.kafkaconsuminghello.consumer;
+package dev.knowhowto.kafkaconsuminghello.consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -6,13 +6,13 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.concurrent.TimeUnit;
 
+import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
+import dev.knowhowto.kafkaconsuminghello.producer.GreetingMessageProducer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.ujar.kafkaconsuminghello.consumer.dto.GreetingDto;
-import org.ujar.kafkaconsuminghello.producer.GreetingMessageProducer;
 
 
 @SpringBootTest

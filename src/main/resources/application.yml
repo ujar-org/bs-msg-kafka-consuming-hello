@@ -90,7 +90,7 @@ management :
     metrics :
       export :
         step : 20s
-        enabled: true
+        enabled : true
   zipkin :
     tracing :
       endpoint : ${TEMPO_URL:http://localhost:9411/api/v2/spans}
@@ -119,7 +119,7 @@ server :
   port : ${SERVER_PORT:8080}
   shutdown : graceful
   forward-headers-strategy : framework
-  tomcat:
+  tomcat :
     redirect-context-root : false
 
 embedded :
@@ -127,7 +127,7 @@ embedded :
     enabled : false
     docker-image-version : 7.2.1
 
-ujar :
+iqkv :
   build :
     description : '@project.description@'
     relative-path : ${SERVER_SERVLET_CONTEXT_PATH:/}

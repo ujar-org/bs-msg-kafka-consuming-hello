@@ -1,4 +1,4 @@
-package org.ujar.kafkaconsuminghello.config;
+package dev.knowhowto.kafkaconsuminghello.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
