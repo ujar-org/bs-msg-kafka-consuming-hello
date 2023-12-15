@@ -34,7 +34,7 @@ embedded :
     docker-image-version : 7.2.1
 
 
-ujar :
+iqkv :
   build :
     description : '@project.description@'
     relative-path : '/'
