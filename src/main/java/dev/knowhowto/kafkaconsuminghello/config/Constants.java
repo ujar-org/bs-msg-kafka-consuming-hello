@@ -1,4 +1,4 @@
-package org.ujar.kafkaconsuminghello.config;
+package dev.knowhowto.kafkaconsuminghello.config;
 
 /**
  * Application constants.

@@ -1,15 +1,15 @@
-package org.ujar.kafkaconsuminghello.producer;
+package dev.knowhowto.kafkaconsuminghello.producer;
 
-import static org.ujar.kafkaconsuminghello.config.Constants.TOPIC_DEFINITION_HELLO_WORLD;
+import static dev.knowhowto.kafkaconsuminghello.config.Constants.TOPIC_DEFINITION_HELLO_WORLD;
 
 import java.util.UUID;
 
+import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import org.ujar.boot.kafka.config.KafkaTopicDefinitionProperties;
-import org.ujar.kafkaconsuminghello.consumer.dto.GreetingDto;
 
 @Component
 @Slf4j
