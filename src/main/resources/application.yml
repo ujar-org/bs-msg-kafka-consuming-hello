@@ -125,7 +125,6 @@ server :
 embedded :
   kafka :
     enabled : false
-    docker-image-version : 7.2.1
 
 iqkv :
   build :
