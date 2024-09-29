@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
-import org.iqkv.boot.kafka.config.BaseKafkaProducingConfig;
+import com.iqkv.boot.kafka.config.BaseKafkaProducingConfig;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.boot.ssl.SslBundles;
 import org.springframework.context.annotation.Bean;
