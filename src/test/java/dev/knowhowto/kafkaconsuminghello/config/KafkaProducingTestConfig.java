@@ -2,9 +2,9 @@ package dev.knowhowto.kafkaconsuminghello.config;
 
 import java.util.HashMap;
 
+import com.iqkv.boot.kafka.config.BaseKafkaProducingConfig;
 import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
-import com.iqkv.boot.kafka.config.BaseKafkaProducingConfig;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.boot.ssl.SslBundles;
 import org.springframework.context.annotation.Bean;

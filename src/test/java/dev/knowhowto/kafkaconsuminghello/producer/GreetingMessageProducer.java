@@ -4,10 +4,10 @@ import static dev.knowhowto.kafkaconsuminghello.config.Constants.TOPIC_DEFINITIO
 
 import java.util.UUID;
 
+import com.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
 import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
