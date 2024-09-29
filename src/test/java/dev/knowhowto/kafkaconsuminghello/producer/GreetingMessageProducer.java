@@ -7,7 +7,7 @@ import java.util.UUID;
 import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
+import com.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
