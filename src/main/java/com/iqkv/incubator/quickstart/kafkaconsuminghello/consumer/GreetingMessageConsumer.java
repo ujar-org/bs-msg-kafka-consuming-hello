@@ -1,9 +1,9 @@
-package dev.knowhowto.kafkaconsuminghello.consumer;
+package com.iqkv.incubator.quickstart.kafkaconsuminghello.consumer;
 
 import java.util.concurrent.CountDownLatch;
 
 import com.iqkv.boot.kafka.exception.ConsumerRecordProcessingException;
-import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
+import com.iqkv.incubator.quickstart.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,9 +1,9 @@
-package dev.knowhowto.kafkaconsuminghello.config;
+package com.iqkv.incubator.quickstart.kafkaconsuminghello.config;
 
 import java.util.HashMap;
 
 import com.iqkv.boot.kafka.config.BaseKafkaProducingConfig;
-import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
+import com.iqkv.incubator.quickstart.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.boot.ssl.SslBundles;

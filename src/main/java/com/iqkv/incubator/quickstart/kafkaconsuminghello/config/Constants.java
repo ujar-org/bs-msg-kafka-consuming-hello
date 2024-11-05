@@ -1,4 +1,4 @@
-package dev.knowhowto.kafkaconsuminghello.config;
+package com.iqkv.incubator.quickstart.kafkaconsuminghello.config;
 
 /**
  * Application constants.

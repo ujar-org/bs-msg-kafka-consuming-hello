@@ -1,4 +1,4 @@
-package dev.knowhowto.kafkaconsuminghello.config;
+package com.iqkv.incubator.quickstart.kafkaconsuminghello.config;
 
 import com.iqkv.boot.kafka.config.KafkaErrorHandlingProperties;
 import com.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;

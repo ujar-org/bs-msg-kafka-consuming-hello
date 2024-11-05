@@ -1,7 +1,7 @@
-package dev.knowhowto.kafkaconsuminghello.config;
+package com.iqkv.incubator.quickstart.kafkaconsuminghello.config;
 
 import com.iqkv.boot.kafka.config.BaseKafkaConsumingConfig;
-import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
+import com.iqkv.incubator.quickstart.kafkaconsuminghello.consumer.dto.GreetingDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;

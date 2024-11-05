@@ -1,11 +1,11 @@
-package dev.knowhowto.kafkaconsuminghello.producer;
+package com.iqkv.incubator.quickstart.kafkaconsuminghello.producer;
 
-import static dev.knowhowto.kafkaconsuminghello.config.Constants.TOPIC_DEFINITION_HELLO_WORLD;
+import static com.iqkv.incubator.quickstart.kafkaconsuminghello.config.Constants.TOPIC_DEFINITION_HELLO_WORLD;
 
 import java.util.UUID;
 
 import com.iqkv.boot.kafka.config.KafkaTopicDefinitionProperties;
-import dev.knowhowto.kafkaconsuminghello.consumer.dto.GreetingDto;
+import com.iqkv.incubator.quickstart.kafkaconsuminghello.consumer.dto.GreetingDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
