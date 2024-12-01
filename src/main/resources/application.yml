@@ -127,7 +127,7 @@ embedded :
     enabled : false
 
 iqkv :
-  build :
+  info :
     description : '@project.description@'
     relative-path : ${SERVER_SERVLET_CONTEXT_PATH:/}
     version : '@project.version@'
