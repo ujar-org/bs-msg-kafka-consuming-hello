@@ -1,8 +1,10 @@
-# Hello, World! - Kafka consumer app
+# 🚀 Hello, World! - Kafka consumer app
 
 Minimal Spring Boot based sample Kafka consumer app.
 
-### Pre-Requisites to run this example locally
+## 🛠️ Installation
+
+Pre-Requisites to run this example locally
 
 - Setup git command line tool (https://help.github.com/articles/set-up-git)
 - Clone source code to the local machine:
