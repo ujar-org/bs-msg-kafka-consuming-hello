@@ -10,7 +10,7 @@ Pre-Requisites to run this example locally
 - Clone source code to the local machine:
 
 ```
-git clone https://github.com/KnowHowSpringBoot/quickstart-kafka-consuming-hello.git
+git clone https://github.com/IQKV/quickstart-kafka-consuming-hello.git
 
 cd quickstart-kafka-consuming-hello
 ```
