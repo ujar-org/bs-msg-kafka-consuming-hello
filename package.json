@@ -1,5 +1,5 @@
 {
-  "name": "@know-how-spring-boot/quickstart-kafka-consuming-hello",
+  "name": "@iqkv/quickstart-kafka-consuming-hello",
   "version": "25.0.0",
   "description": "Provide an optional Git commit hooks.",
   "private": true,
